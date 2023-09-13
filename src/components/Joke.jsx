@@ -22,16 +22,7 @@ const Joke = () => {
   };
 
   useEffect(() => {
-    setSetUp("")
-    setPunchline("")
-    const URL = "https://official-joke-api.appspot.com/random_joke";
-    fetch(URL)
-        .then((response) => response.json())
-        .then((jokejson) => {
-        setSetUp(jokejson.setup);
-        setPunchline(jokejson.punchline);
-        setShowPunchline(false);
-    });
+    getNewJoke();
   }, []);
 
   const getPunchline = () => {
@@ -55,8 +46,8 @@ const Joke = () => {
             loading={loading}
             size={80}
             speedMultiplier={2}
-            alignItems="center"
-            justifyContent="center"
+            alignitems="center"
+            justifycontent="center"
             className="loader"
           />
       ) : (
